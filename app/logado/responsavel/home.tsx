@@ -1,4 +1,3 @@
-import Colors from '../../../constants/Colors';
 import { useRouter } from 'expo-router';
 import {
     Image,
@@ -8,6 +7,7 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native';
+import Colors from '../../../constants/Colors';
 
 export default function HomeResponsavel() {
     const router = useRouter();
@@ -40,44 +40,45 @@ export default function HomeResponsavel() {
 
             {/* CORPO */}
             <View style={styles.body}>
-                <Text style={styles.servicosTitle}>Nossos serviços</Text>
+                <View style={styles.timeline}>
+                    <Text style={styles.servicosTitle}>Nossos serviços</Text>
 
-                <ScrollView
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                    contentContainerStyle={styles.servicosContainer}
-                >
-                    <TouchableOpacity onPress={() => router.push('/saude')}>
-                        <Image
-                            source={require('../../../assets/images/Saude.png')}
-                            style={styles.servicoCard}
-                        />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => router.push('/dependentes')}>
-                        <Image
-                            source={require('../../../assets/images/Dependentes.png')}
-                            style={styles.servicoCard}
-                        />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => router.push('/relatorios')}>
-                        <Image
-                            source={require('../../../assets/images/Relatorios.png')}
-                            style={styles.servicoCard}
-                        />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => router.push('/lembretes')}>
-                        <Image
-                            source={require('../../../assets/images/Lembretes.png')}
-                            style={styles.servicoCard}
-                        />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => router.push('/dicas')}>
-                        <Image
-                            source={require('../../../assets/images/Dicas.png')}
-                            style={styles.servicoCard}
-                        />
-                    </TouchableOpacity>
-                </ScrollView>
+                    <ScrollView
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        contentContainerStyle={styles.servicosContainer}
+                    >
+                        <TouchableOpacity onPress={() => router.push('./saude')}>
+                            <Image
+                                source={require('../../../assets/images/Saude.png')}
+                                style={styles.servicoCard}
+                            />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => router.push('./dependentes')}>
+                            <Image
+                                source={require('../../../assets/images/Dependentes.png')}
+                                style={styles.servicoCard}
+                            />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => router.push('./relatorios')}>
+                            <Image
+                                source={require('../../../assets/images/Relatorios.png')}
+                                style={styles.servicoCard}
+                            />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => router.push('./lembretes')}>
+                            <Image
+                                source={require('../../../assets/images/Lembretes.png')}
+                                style={styles.servicoCard}
+                            />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => router.push('./dicas')}>
+                            <Image
+                                source={require('../../../assets/images/Dicas.png')}
+                                style={styles.servicoCard}
+                            />
+                        </TouchableOpacity>
+                    </ScrollView></View>
 
                 <Text style={styles.hojeTitle}>Para hoje:</Text>
 
@@ -132,18 +133,21 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 25,
         paddingTop: 24,
         paddingHorizontal: 20,
+        width: '100%',
+        height: '100%'
     },
     servicosTitle: {
         fontSize: 18,
         fontFamily: 'Poppins-Medium',
         color: '#000',
-        marginBottom: 16,
+        marginTop: 20,
+        marginBottom: 40,
     },
     servicosContainer: {
         paddingRight: 12,
     },
     servicoCard: {
-        width: 100,
+        width: 89,
         height: 100,
         marginRight: 0,
         resizeMode: 'contain',
@@ -153,5 +157,8 @@ const styles = StyleSheet.create({
         fontFamily: 'Poppins-Medium',
         color: '#000',
         marginBottom: 310,
+    },
+    timeline: {
+        marginBottom: 70,
     },
 });
