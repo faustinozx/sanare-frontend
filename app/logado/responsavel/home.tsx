@@ -53,6 +53,7 @@ export default function HomeResponsavel() {
                                 source={require('../../../assets/images/Saude.png')}
                                 style={styles.servicoCard}
                             />
+                            <Text style={styles.cardText}>Saúde</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => router.push('./dependentes')}>
                             <Image
@@ -83,6 +84,37 @@ export default function HomeResponsavel() {
                 <Text style={styles.hojeTitle}>Para hoje:</Text>
 
             </View>
+
+            {/* NAV */}
+            <View style={styles.navBar}>
+                <TouchableOpacity style={styles.navItem} onPress={() => router.push('/homeResponsavel')}>
+                    <Image
+                        source={require('../../../assets/images/inicio.png')}
+                        style={[styles.navIcon, styles.navIconActive]}
+                        resizeMode="contain"
+                    />
+                    <Text style={[styles.navText, styles.navTextActive]}>Início</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.navItem} onPress={() => router.push('/comunidade')}>
+                    <Image
+                        source={require('../../../assets/images/comunidade.png')}
+                        style={styles.navIcon}
+                        resizeMode="contain"
+                    />
+                    <Text style={styles.navText}>Comunidade</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.navItem} onPress={() => router.push('/profile.tsx')}>
+                    <Image
+                        source={require('../../../assets/images/perfil.png')}
+                        style={styles.navIcon}
+                        resizeMode="contain"
+                    />
+                    <Text style={styles.navText}>Perfil</Text>
+                </TouchableOpacity>
+            </View>
+
         </View>
     );
 }
@@ -152,6 +184,11 @@ const styles = StyleSheet.create({
         marginRight: 0,
         resizeMode: 'contain',
     },
+    cardText: {
+        fontSize: 13,
+        fontFamily: 'Poppins-Medium',
+        color: '#000',
+    },
     hojeTitle: {
         fontSize: 18,
         fontFamily: 'Poppins-Medium',
@@ -161,4 +198,40 @@ const styles = StyleSheet.create({
     timeline: {
         marginBottom: 70,
     },
+    navBar: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        height: 95,
+        width: '100%',
+        backgroundColor: '#EDEDED',
+        paddingBottom: 10,
+    },
+
+    navItem: {
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    navIcon: {
+        width: 33,
+        height: 38,
+        tintColor: '#666', //talvez constar na colors
+        marginBottom: 4,
+    },
+
+    navIconActive: {
+        tintColor: Colors.light.bluePrimary,
+    },
+
+    navText: {
+        fontSize: 12,
+        fontFamily: 'Poppins-Regular',
+        color: '#666',
+    },
+
+    navTextActive: {
+        fontFamily: 'Poppins-Medium',
+        color: '#0057B0',
+    }
 });
