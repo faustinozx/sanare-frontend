@@ -67,14 +67,14 @@ export default function HomeResponsavel() {
                                 source={require('../../../assets/images/Relatorios.png')}
                                 style={styles.servicoCard}
                             />
-                            <Text style={styles.cardTextt}>Relatórios</Text>
+                            <Text style={styles.cardTextj}>Relatórios</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => router.push('./lembretes')}>
                             <Image
                                 source={require('../../../assets/images/Lembretes.png')}
                                 style={styles.servicoCard}
                             />
-                            <Text style={styles.cardTextt}>Lembretes</Text>
+                            <Text style={styles.cardTextj}>Lembretes</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => router.push('./dicas')}>
                             <Image
@@ -86,6 +86,7 @@ export default function HomeResponsavel() {
                     </ScrollView></View>
 
                 <Text style={styles.hojeTitle}>Para hoje:</Text>
+                <Text style={styles.verTitle}>Ver tudo</Text>
 
             </View>
 
@@ -194,7 +195,7 @@ const styles = StyleSheet.create({
         color: '#000',
         position: 'absolute',
         top: 67,
-        left: 27,
+        left: 29,
     },
     cardTextt: {
         fontSize: 11,
@@ -202,14 +203,28 @@ const styles = StyleSheet.create({
         color: '#000',
         position: 'absolute',
         top: 67,
-        left: 16,
-        righ: 40
+        left: 14,
+        right: 0
+    },
+    cardTextj: {
+        fontSize: 11,
+        fontFamily: 'Poppins-Medium',
+        color: '#000',
+        position: 'absolute',
+        top: 67,
+        left: 20,
     },
     hojeTitle: {
         fontSize: 18,
         fontFamily: 'Poppins-Medium',
         color: '#000',
         marginBottom: 310,
+    },
+    verTitle: {
+        fontSize: 13,
+        fontFamily: 'Poppins-Medium',
+        color: Colors.light.bluePrimary,
+        marginBottom: 3,
     },
     timeline: {
         marginBottom: 70,
