@@ -60,24 +60,28 @@ export default function HomeResponsavel() {
                                 source={require('../../../assets/images/Dependentes.png')}
                                 style={styles.servicoCard}
                             />
+                            <Text style={styles.cardTextt}>Dependentes</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => router.push('./relatorios')}>
                             <Image
                                 source={require('../../../assets/images/Relatorios.png')}
                                 style={styles.servicoCard}
                             />
+                            <Text style={styles.cardTextt}>Relatórios</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => router.push('./lembretes')}>
                             <Image
                                 source={require('../../../assets/images/Lembretes.png')}
                                 style={styles.servicoCard}
                             />
+                            <Text style={styles.cardTextt}>Lembretes</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => router.push('./dicas')}>
                             <Image
                                 source={require('../../../assets/images/Dicas.png')}
                                 style={styles.servicoCard}
                             />
+                            <Text style={styles.cardText}>Dicas</Text>
                         </TouchableOpacity>
                     </ScrollView></View>
 
@@ -87,7 +91,7 @@ export default function HomeResponsavel() {
 
             {/* NAV */}
             <View style={styles.navBar}>
-                <TouchableOpacity style={styles.navItem} onPress={() => router.push('/homeResponsavel')}>
+                <TouchableOpacity style={styles.navItem} onPress={() => router.push('./homeResponsavel')}>
                     <Image
                         source={require('../../../assets/images/inicio.png')}
                         style={[styles.navIcon, styles.navIconActive]}
@@ -96,7 +100,7 @@ export default function HomeResponsavel() {
                     <Text style={[styles.navText, styles.navTextActive]}>Início</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.navItem} onPress={() => router.push('/comunidade')}>
+                <TouchableOpacity style={styles.navItem} onPress={() => router.push('./comunidade')}>
                     <Image
                         source={require('../../../assets/images/comunidade.png')}
                         style={styles.navIcon}
@@ -105,7 +109,7 @@ export default function HomeResponsavel() {
                     <Text style={styles.navText}>Comunidade</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.navItem} onPress={() => router.push('/profile.tsx')}>
+                <TouchableOpacity style={styles.navItem} onPress={() => router.push('./profile.tsx')}>
                     <Image
                         source={require('../../../assets/images/perfil.png')}
                         style={styles.navIcon}
@@ -185,9 +189,21 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     cardText: {
-        fontSize: 13,
+        fontSize: 11,
         fontFamily: 'Poppins-Medium',
         color: '#000',
+        position: 'absolute',
+        top: 67,
+        left: 27,
+    },
+    cardTextt: {
+        fontSize: 11,
+        fontFamily: 'Poppins-Medium',
+        color: '#000',
+        position: 'absolute',
+        top: 67,
+        left: 16,
+        righ: 40
     },
     hojeTitle: {
         fontSize: 18,
