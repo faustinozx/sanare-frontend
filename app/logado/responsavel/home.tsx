@@ -22,7 +22,7 @@ const carouselData = [
         image: require('../../../assets/images/cardregistro.png'),
         label: 'Saúde',
         button: 'Registrar',
-        route: './registrar',
+        route: './registro/registro',
     },
     {
         id: 2,
@@ -118,21 +118,21 @@ export default function HomeResponsavel() {
                             showsHorizontalScrollIndicator={false}
                             contentContainerStyle={styles.servicosContainer}
                         >
-                            <TouchableOpacity onPress={() => router.push('./saude')}>
+                            <TouchableOpacity onPress={() => router.push('./registro/registro')}>
                                 <Image
                                     source={require('../../../assets/images/Saude.png')}
                                     style={styles.servicoCard}
                                 />
                                 <Text style={styles.cardText}>Saúde</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => router.push('./dependentes')}>
+                            <TouchableOpacity onPress={() => router.push('./registro/humor')}>
                                 <Image
                                     source={require('../../../assets/images/Dependentes.png')}
                                     style={styles.servicoCard}
                                 />
                                 <Text style={styles.cardTextt}>Dependentes</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => router.push('./relatorios')}>
+                            <TouchableOpacity onPress={() => router.push('./registro/hidratacao')}>
                                 <Image
                                     source={require('../../../assets/images/Relatorios.png')}
                                     style={styles.servicoCard}
@@ -146,7 +146,7 @@ export default function HomeResponsavel() {
                                 />
                                 <Text style={styles.cardTextj}>Lembretes</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => router.push('./dicas')}>
+                            <TouchableOpacity onPress={() => router.push('./registro/pressao')}>
                                 <Image
                                     source={require('../../../assets/images/Dicas.png')}
                                     style={styles.servicoCard}
@@ -370,8 +370,8 @@ const styles = StyleSheet.create({
         paddingRight: 12,
     },
     servicoCard: {
-        width: 89,
-        height: 100,
+        width: 100,
+        height: 120,
         marginRight: 0,
         resizeMode: 'contain',
     },
@@ -380,7 +380,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Poppins-Medium',
         color: Colors.light.black,
         position: 'absolute',
-        top: 67,
+        top: 80,
         left: 29,
     },
     cardTextt: {
@@ -388,7 +388,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Poppins-Medium',
         color: Colors.light.black,
         position: 'absolute',
-        top: 67,
+        top: 80,
         left: 14,
         right: 0,
     },
@@ -397,7 +397,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Poppins-Medium',
         color: Colors.light.black,
         position: 'absolute',
-        top: 67,
+        top: 80,
         left: 20,
     },
     hojeContainer: {
