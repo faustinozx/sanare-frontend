@@ -1,28 +1,24 @@
-import Colors from '@/constants/Colors';
+import React from 'react';
+import {
+    View,
+    Text,
+    TouchableOpacity,
+    StyleSheet,
+    ScrollView,
+} from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { useState } from 'react';
-import {
-    Image,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
-} from 'react-native';
+import Colors from '@/constants/Colors';
 
-const Hidratacao = () => {
+const Glicemia = () => {
     const navigation = useNavigation();
-    const [litros, setLitros] = useState('');
 
     const handleSave = () => {
-        console.log(`Litros consumidos: ${litros}`);
+        console.log('Glicemia registrada!');
     };
 
     return (
         <ScrollView contentContainerStyle={styles.container}>
-
             <TouchableOpacity
                 style={styles.backButton}
                 onPress={() => navigation.goBack()}
@@ -30,26 +26,8 @@ const Hidratacao = () => {
                 <AntDesign name="left" size={30} color={Colors.light.bluePrimary} />
             </TouchableOpacity>
 
-            <Text style={styles.title}>Hidratação</Text>
-            <Text style={styles.subtitle}>Como está a sua hidratação?</Text>
-
-
-            <Image
-                source={require('../../../../assets/images/agua.png')}
-                style={styles.image}
-                resizeMode="contain"
-            />
-
-
-            <TextInput
-                style={styles.input}
-                placeholder="Litros"
-                placeholderTextColor={Colors.light.gray}
-                keyboardType="numeric"
-                value={litros}
-                onChangeText={setLitros}
-            />
-
+            <Text style={styles.title}>Glicemia</Text>
+            <Text style={styles.subtitle}>Registre sua glicemia!</Text>
 
             <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
                 <Text style={styles.saveButtonText}>Salvar</Text>
@@ -86,23 +64,6 @@ const styles = StyleSheet.create({
         marginBottom: 24,
         color: Colors.light.black,
     },
-    image: {
-        top: 120,
-        width: 360,
-        height: 160,
-        marginBottom: 10,
-    },
-    input: {
-        top: 140,
-        borderBottomWidth: 1,
-        borderBottomColor: Colors.light.gray,
-        fontSize: 16,
-        width: '60%',
-        marginBottom: 40,
-        fontFamily: 'Poppins-Regular',
-        color: Colors.light.black,
-        textAlign: 'left',
-    },
     saveButton: {
         top: 200,
         width: 180,
@@ -119,4 +80,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Hidratacao;
+export default Glicemia;

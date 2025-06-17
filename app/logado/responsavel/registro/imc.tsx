@@ -1,28 +1,28 @@
-import Colors from '@/constants/Colors';
+import React, { useState } from 'react';
+import {
+    View,
+    Text,
+    TouchableOpacity,
+    StyleSheet,
+    TextInput,
+    ScrollView,
+} from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { useState } from 'react';
-import {
-    Image,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
-} from 'react-native';
+import Colors from '@/constants/Colors';
 
-const Hidratacao = () => {
+const Imc = () => {
     const navigation = useNavigation();
-    const [litros, setLitros] = useState('');
+    const [altura, setAltura] = useState('');
+    const [peso, setPeso] = useState('');
 
     const handleSave = () => {
-        console.log(`Litros consumidos: ${litros}`);
+        console.log(`Altura: ${altura}`);
+        console.log(`Peso: ${peso}`);
     };
 
     return (
         <ScrollView contentContainerStyle={styles.container}>
-
             <TouchableOpacity
                 style={styles.backButton}
                 onPress={() => navigation.goBack()}
@@ -30,26 +30,28 @@ const Hidratacao = () => {
                 <AntDesign name="left" size={30} color={Colors.light.bluePrimary} />
             </TouchableOpacity>
 
-            <Text style={styles.title}>Hidratação</Text>
-            <Text style={styles.subtitle}>Como está a sua hidratação?</Text>
+            <Text style={styles.title}>IMC</Text>
+            <Text style={styles.subtitle}>Registre seu IMC</Text>
 
-
-            <Image
-                source={require('../../../../assets/images/agua.png')}
-                style={styles.image}
-                resizeMode="contain"
-            />
-
-
+            <Text style={styles.label}>Altura:</Text>
             <TextInput
                 style={styles.input}
-                placeholder="Litros"
+                placeholder="Ex: 1.80m"
                 placeholderTextColor={Colors.light.gray}
                 keyboardType="numeric"
-                value={litros}
-                onChangeText={setLitros}
+                value={altura}
+                onChangeText={setAltura}
             />
 
+            <Text style={styles.label}>Peso:</Text>
+            <TextInput
+                style={styles.input}
+                placeholder="Ex: 80kg"
+                placeholderTextColor={Colors.light.gray}
+                keyboardType="numeric"
+                value={peso}
+                onChangeText={setPeso}
+            />
 
             <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
                 <Text style={styles.saveButtonText}>Salvar</Text>
@@ -86,22 +88,24 @@ const styles = StyleSheet.create({
         marginBottom: 24,
         color: Colors.light.black,
     },
-    image: {
-        top: 120,
-        width: 360,
-        height: 160,
-        marginBottom: 10,
+    label: {
+        top: 150,
+        alignSelf: 'flex-start',
+        fontSize: 16,
+        fontFamily: 'Poppins-SemiBold',
+        color: Colors.light.bluePrimary,
+        marginBottom: 4,
+        marginTop: 12,
     },
     input: {
-        top: 140,
+        top: 160,
         borderBottomWidth: 1,
         borderBottomColor: Colors.light.gray,
         fontSize: 16,
-        width: '60%',
-        marginBottom: 40,
+        width: '100%',
         fontFamily: 'Poppins-Regular',
         color: Colors.light.black,
-        textAlign: 'left',
+        marginBottom: 16,
     },
     saveButton: {
         top: 200,
@@ -119,4 +123,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Hidratacao;
+export default Imc;

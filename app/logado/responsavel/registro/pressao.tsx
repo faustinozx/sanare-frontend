@@ -57,11 +57,6 @@ const Pressao = () => {
                 onChangeText={setDiastolica}
             />
 
-            <View style={styles.pagination}>
-                <View style={styles.dot} />
-                <View style={styles.dot} />
-                <View style={[styles.dot, styles.activeDot]} />
-            </View>
 
             <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
                 <Text style={styles.saveButtonText}>Salvar</Text>
@@ -116,22 +111,6 @@ const styles = StyleSheet.create({
         fontFamily: 'Poppins-Regular',
         color: Colors.light.black,
         marginBottom: 16,
-    },
-    pagination: {
-        top: 190,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        marginBottom: 32,
-    },
-    dot: {
-        width: 16,
-        height: 4,
-        borderRadius: 2,
-        backgroundColor: '#ccc',
-        marginHorizontal: 4,
-    },
-    activeDot: {
-        backgroundColor: Colors.light.bluePrimary,
     },
     saveButton: {
         top: 200,
