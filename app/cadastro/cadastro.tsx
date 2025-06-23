@@ -143,7 +143,7 @@ export default function Cadastro() {
     return (
         <View style={styles.container}>
             <Image
-                source={require('../../assets/images/bgSanare.png')}
+                source={require('../../assets/images/Vector2.png')}
                 style={styles.logoFooter}
             />
             <KeyboardAvoidingView
@@ -204,12 +204,13 @@ const styles = StyleSheet.create({
     logoFooter: {
         position: 'absolute',
         bottom: 0,
-        top: '31%',
-        resizeMode: 'contain',
+        top: 90,
+        resizeMode: 'cover',
         left: 0,
         right: 0,
-        height: '100%',
-        width: '100%',
+        opacity: 0.7,
+        height: 250,
+        width: 429,
     },
     mainContainer: {
         justifyContent: "center",
